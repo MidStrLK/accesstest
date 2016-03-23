@@ -1,7 +1,8 @@
 var request  	= require("request"),
-    formatDate  = require('./formatdate');
+    formatDate  = require('./formatdate'),
+	min = 0.5;
 
-testServers = ['https://www.yandex.ru/'];
+testServers = ['http://compareweather-midstr.rhcloud.com/', 'http://accesstest-mdstr.rhcloud.com/'];
 
 function start(testResult){
     setInterval(function(){
@@ -9,7 +10,7 @@ function start(testResult){
             console.log('TEST -- ', val, ' - ', formatDate.dateToLocal());
             ping(val, testResult);
         });
-    }, 10000)
+    },  min*60*1000)
 }
 
 function ping(url, testResult){
