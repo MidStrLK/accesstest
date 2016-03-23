@@ -1,6 +1,6 @@
 var request  	= require("request"),
     formatDate  = require('./formatdate'),
-	min = 0.5;
+	min = 20;
 
 testServers = ['http://compareweather-midstr.rhcloud.com/', 'http://accesstest-mdstr.rhcloud.com/'];
 
