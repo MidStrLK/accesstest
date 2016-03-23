@@ -3,6 +3,7 @@ var server 			= require("./node/server"),
 	requestHandlers = require("./node/requestHandlers"),
 	handle 			= {};
 
-handle["/"]                 = requestHandlers.submitRequest;
+handle["/"]         = requestHandlers.submitRequest;
+handle["/reset"]    = requestHandlers.submitRequest;
 
 server.start(router.route, handle);
