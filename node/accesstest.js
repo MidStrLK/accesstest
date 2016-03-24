@@ -1,6 +1,6 @@
 var request  	= require("request"),
     formatDate  = require('./formatdate'),
-	min = 20;
+	min = 30;   // Минуты
 
 testServers = ['http://compareweather-midstr.rhcloud.com/', 'http://accesstest-mdstr.rhcloud.com/'];
 
@@ -17,7 +17,8 @@ function ping(url, testResult){
     request({
         uri: url
     }, function(error, response, body) {
-        testResult.push([url, formatDate.dateToLocal(),!!body]);
+        console.info('error - ',error);
+        testResult.push([url, formatDate.dateToLocal(), error || 'OK']);
 
     });
 }
