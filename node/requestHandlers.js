@@ -38,9 +38,11 @@ function getButton(){
 function getTable(obj){
     var res = '<table>\n';
     obj.forEach(function(val){
-        var color = (val[2] == true) ? 'green' : 'red',
-            result = (val[2] == true) ? 'OK' : 'error';
-        res += '<tr style="color: yellow; background-color: ' + color + '"><td>' + val[0] + '</td><td>' + val[1] + '</td><td>' + result + '</td></tr>\n'
+        var color =   (val[2] == 'OK') ? '#888' : 'yellow',
+            bgcolor = (val[2] == 'OK') ? '#ddd'  : 'red',
+            result = val[2];
+            //result = (val[2] == true) ? 'OK' : 'error';
+        res += '<tr style="color: ' + color + '; background-color: ' + bgcolor + '"><td>' + val[0] + '</td><td>' + val[1] + '</td><td>' + result + '</td></tr>\n'
     });
 
     res += '</table>';
